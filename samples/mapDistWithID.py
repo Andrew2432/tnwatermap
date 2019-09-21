@@ -247,10 +247,10 @@ data_files_year = ['11', '12', '13', '14', '15', '16', '17', '18', '19']
 images_path = Path('D:\MEGA\Core CS\Projects\TNWaterMap\water_data\img')
 
 
-data_file_path_year = data_file_path / data_year[0]
-penultimate_data_file_name = data_files[3] + data_files_year[0]
-the_data_file_name = penultimate_data_file_name + '.csv'
-final_data_file_name = os.path.join(data_file_path_year, the_data_file_name)
+# data_file_path_year = data_file_path / data_year[0]
+# penultimate_data_file_name = data_files[3] + data_files_year[0]
+# the_data_file_name = penultimate_data_file_name + '.csv'
+# final_data_file_name = os.path.join(data_file_path_year, the_data_file_name)
 # print(final_data_file_name)
 city_ids = []
 
@@ -284,47 +284,63 @@ districts_dict = {
     'Thoothukudi': 6,
     'Tirunelveli': 8,
     'Virudhunagar': 13,
-    'Kanyakumari': 26
+    'Kanyakumari': 26,
+    'Thiruppur': 9
 }
 
-for i in range(12):
-    data_file_path_year = data_file_path / data_year[0]
-    penultimate_data_file_name = data_files[i] + data_files_year[0]
-    the_data_file_name = penultimate_data_file_name + '.csv'
-    final_data_file_name = os.path.join(data_file_path_year, the_data_file_name)
-    if os.path.exists(final_data_file_name):
-        if os.path.isfile(final_data_file_name):
-            #print(final_data_file_name)
+# print(sorted([i for i in districts_dict.values()]))
 
-            data_f = pd.read_csv(final_data_file_name, delimiter=',',
-                                 names=['sno', 'welltype', 'district', 'prev_year','cur_year'])
+for i in [3]:
+    try:
+        data_file_path_year = data_file_path / data_year[1]
+        penultimate_data_file_name = data_files[i] + data_files_year[1]
+        the_data_file_name = penultimate_data_file_name + '.csv'
+        final_data_file_name = os.path.join(data_file_path_year, the_data_file_name)
+        # print(final_data_file_name)
+        if os.path.exists(final_data_file_name):
+            if os.path.isfile(final_data_file_name):
+                #print(final_data_file_name)
 
-            # names = [i for i in df.district]
-            data = [i for i in data_f.prev_year]
-            data.pop(0)
-            water_data = [float(i) for i in data]
+                data_f = pd.read_csv(final_data_file_name, delimiter=',',
+                                     names=['sno', 'welltype', 'district', 'prev_year','cur_year'])
 
-            print_id = False # The shape id will be printed
-            color_pallete = 3 # ‘Purple’
+                # Checking if all districts in file is correct
+                # names = [i for i in data_f.district]
+                # for name in names:
+                #     if name not in districts_dict.keys():
+                #         print(name)
 
-            try:
+                data = [i for i in data_f.prev_year]
+                data.pop(0)
+                water_data = [float(i) for i in data]
+
+                print_id = False # The shape id will be printed
+                color_pallete = 3 # ‘Purple’
+
+
                 for j in data_f.district:
                     if j == 'Name of the District':
                         continue
                     elif j == 'Previous Year(January 2013)':
                         continue
                     city_ids.append(districts_dict[j])
-            except KeyError:
-                pass
 
-            plot_cities_data(sf, 'map', city_ids, water_data, color_pallete, print_id)
-            final_images_path = images_path / data_year[0]
-            image_name = penultimate_data_file_name + '.png'
-            final_image_file_name = final_images_path / image_name
-            # print(final_image_file_name)
-            plt.savefig(final_image_file_name)
-            plt.show()
 
+                plot_cities_data(sf, 'map', city_ids, water_data, color_pallete, print_id)
+                final_images_path = images_path / data_year[1]
+                image_name = penultimate_data_file_name + '.png'
+                final_image_file_name = final_images_path / image_name
+                # print(final_image_file_name)
+                plt.savefig(final_image_file_name)
+                plt.show()
+            else:
+                continue
+    except TypeError:
+        print('TypeError')
+        continue
+    except ValueError:
+        print('ValueError')
+        continue
 
 # data_f = pd.read_csv(final_data_file_name, delimiter=',',
 #                              names=['sno', 'welltype', 'district', 'prev_year','cur_year'])
