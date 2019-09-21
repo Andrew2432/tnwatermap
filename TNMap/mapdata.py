@@ -16,7 +16,7 @@ sns.set(style="whitegrid", palette="pastel", color_codes=True)
 sns.mpl.rc("figure", figsize=(10, 6))
 
 # opening the vector map
-shp_path = "F:\\forsk\\Day4,5\\District_Boundary.shp"
+shp_path = "D:\\MEGA\\Core CS\\Projects\\TNWaterMap\\resources\\tamilnadu_district.shp"
 # reading the shape file by using reader function of the shape lib
 sf = shp.Reader(shp_path)
 
@@ -54,7 +54,7 @@ df.shape
 df.sample(5)
 
 # we can access the diff columns by only its column name
-df.DIST_NAME
+print(df.DIST_NAME)
 
 
 # plotting the map of a small city in rajasthan or a specific shape with the help of matplotlib
@@ -255,6 +255,7 @@ def plot_cities_2(sf, title, cities, color):
 
 south = ['jaipur', 'churu', 'bikaner']
 plot_cities_2(sf, 'North', south, 'c')
+plt.show()
 
 
 # heat mapping
