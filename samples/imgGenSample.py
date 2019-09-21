@@ -4,6 +4,7 @@ import shapefile as shp
 import matplotlib.pyplot as plt
 import seaborn as sns
 from pathlib import Path
+import os
 sns.set(style="whitegrid", palette="pastel", color_codes=True)
 sns.mpl.rc("figure", figsize=(10,6))
 
@@ -196,8 +197,8 @@ def plot_cities_data(sf, title, cities, data=None, color=None, print_id=False):
     color_ton, bins = calc_color(data, color)
     df = read_shapefile(sf)
     city_id = []
-    for i in cities:
-        city_id.append(df[df.district == i].index.get_values()[0])
+    # for i in cities:
+    #     city_id.append(df[df.district == i].index.get_values()[0])
     plot_map_fill_multiples_ids_tone(sf, title, city_id,
                                      print_id,
                                      color_ton,
@@ -236,30 +237,39 @@ def plot_map_fill_multiples_ids_tone(sf, title, city,
     if (x_lim != None) & (y_lim != None):
         plt.xlim(x_lim)
         plt.ylim(y_lim)
-    plt.show()
 
-data_file_path = Path('D:\MEGA\Core CS\Projects\TNWaterMap\water_data')
-data_files = ['avwl_Aug19.csv', 'avwl_July19.csv', 'avwl_June19.csv', 'avwl_jan12.csv']
-data_f = pd.read_csv(data_file_path / data_files[0], delimiter=',', names=['sno','welltype','district','prev_year',
-                                                      'cur_year',
-                                                      'rise','fall','remarks'])
-#
-# names = [i for i in df.district]
-# data = [i for i in data_f.prev_year]
-# data.pop(0)
-# water_data = [float(i) for i in data]
-# print_id = True # The shape id will be printed
-# color_pallete = 1 # ‘Purple’
-# #plot_cities_data(sf, 'map', names, water_data, color_pallete, print_id)
-# print(len(water_data))
-# print(len(names))
-# print(names)
 
-names = [i for i in df.district]
-data = [i for i in data_f.prev_year]
-data.pop(0)
-data.append(8.77)
-water_data = [float(i) for i in data]
-print_id = True # The shape id will be printed
-color_pallete = 3 # ‘Purple’
-plot_cities_data(sf, 'map', names, water_data, color_pallete, print_id)
+data_file_path = Path('D:\MEGA\Core CS\Projects\TNWaterMap\water_data\csv')
+data_year = ['2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019']
+data_files = ['avwl_Jan', 'avwl_Feb', 'avwl_Mar', 'avwl_Apr', 'avwl_May', 'avwl_June', 'avwl_July', 'avwl_Aug', 'avwl_Sep',
+               'avwl_Oct', 'avwl_Nov', 'avwl_Dec']
+data_files_year = ['11', '12', '13', '14', '15', '16', '17', '18', '19']
+images_path = Path('D:\MEGA\Core CS\Projects\TNWaterMap\water_data\img')
+
+
+data_file_path_year = data_file_path / data_year[0]
+penultimate_data_file_name = data_files[3] + data_files_year[0]
+the_data_file_name = penultimate_data_file_name + '.csv'
+final_data_file_name = os.path.join(data_file_path_year, the_data_file_name)
+# print(final_data_file_name)
+
+if os.path.exists(final_data_file_name):
+    if os.path.isfile(final_data_file_name):
+        #print(final_data_file_name)
+
+        data_f = pd.read_csv(final_data_file_name, delimiter=',',
+                             names=['sno', 'welltype', 'district', 'prev_year','cur_year'])
+
+        names = [i for i in df.district]
+        data = [i for i in data_f.cur_year]
+        data.pop(0)
+        data.append(8.77)
+        water_data = [float(i) for i in data]
+        print_id = False # The shape id will be printed
+        color_pallete = 3 # ‘Purple’
+        plot_cities_data(sf, 'map', names, water_data, color_pallete, print_id)
+        final_images_path = images_path / data_year[0]
+        image_name = penultimate_data_file_name + '.png'
+        final_image_file_name = final_images_path / image_name
+        # print(final_image_file_name)
+        plt.savefig(final_image_file_name)
