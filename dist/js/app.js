@@ -54,7 +54,6 @@ function getSelectedMap() {
 }
 
 function plotTable(address) {
-	let container;
 	d3.text(address, function(data) {
 		let parsedCSV = d3.csv.parseRows(data);
 		let container = d3
