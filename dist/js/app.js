@@ -58,7 +58,7 @@ function plotTable(address) {
 		var parsedCSV = d3.csv.parseRows(data);
 
 		var container = d3
-			.select("body")
+			.select("#table-data")
 			.append("table")
 
 			.selectAll("tr")
