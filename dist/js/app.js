@@ -23,27 +23,66 @@ function doesFileExist(urlToFile) {
 }
 
 function getSelectedMap() {
+	flag = 0;
 	let year = getSelectedYear();
 	let month = getSelectedMonth();
 
 	new_year = String(year);
 	new_month = String(month);
 	new_year_short = String(new_year).substring(2, 4);
+
 	base_address = "water_data/img/";
+	base_csv_address = "water_data/csv/";
 	default_address = "water_data/img/2011/avwl_Mar11.png";
-	new_address = `${base_address}${new_year}/avwl_${new_month}${new_year_short}.png`;
+	new_address = `${base_address}${new_year}/avwl_${new_month}${new_year_short}.webp`;
+	new_csv_address = `${base_csv_address}${new_year}/avwl_${new_month}${new_year_short}.csv`;
 
 	// Check if image file exists, else use default file
-	// url_new_address = `http://127.0.0.1:5501/${new_address}`;
-	url_new_address = `https://tnwatermap.netlify.com/${new_address}`;
+	url_new_address = `http://127.0.0.1:5501/${new_address}`;
+	//url_new_address = `https://tnwatermap.netlify.com/${new_address}`;
 	isURL = doesFileExist(url_new_address);
 
-	if (isURL) set_address = new_address;
-	else {
+	if (isURL) {
+		set_address = new_address;
+		plotTable(new_csv_address, flag);
+		flag++;
+	} else {
 		set_address = default_address;
 		alert("Proper data not available");
 	}
 	console.log(set_address);
 	imgTag = document.getElementById("map");
 	document.getElementById("map").setAttribute("src", set_address);
+}
+
+function plotTable(address, flag) {
+	let container;
+	d3.text(address, function(data) {
+		let parsedCSV = d3.csv.parseRows(data);
+		if (flag == 1) {
+			container.select("#table_data").remove();
+			flag = 0;
+		}
+		if (flag == 0) {
+			container = d3
+				.select("#table-data")
+				.append("table")
+
+				.selectAll("tr")
+				.data(parsedCSV)
+				.enter()
+				.append("tr")
+
+				.selectAll("td")
+				.data(function(d) {
+					return d;
+				})
+				.enter()
+				.append("td")
+				.text(function(d) {
+					return d;
+				});
+			flag = 1;
+		}
+	});
 }

@@ -6,24 +6,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e9827fd-3dc9-43a1-bd62-c8878707f0b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/water_data/csv/2013/avwl_Apr13.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/water_data/csv/2013/avwl_Aug13.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/water_data/csv/2013/avwl_Dec13.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/water_data/csv/2013/avwl_Feb13.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/water_data/csv/2013/avwl_Jan13.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/water_data/csv/2013/avwl_July13.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/water_data/csv/2013/avwl_June13.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/water_data/csv/2013/avwl_Mar13.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/water_data/csv/2013/avwl_May13.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/water_data/csv/2013/avwl_Nov13.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/water_data/csv/2013/avwl_Oct13.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/water_data/csv/2013/avwl_Sep13.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samples/mapDistWithID.py" beforeDir="false" afterPath="$PROJECT_DIR$/samples/mapDistWithID.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/water_data/csv/2012/avwi_Dec12.csv" beforeDir="false" afterPath="$PROJECT_DIR$/water_data/csv/2012/avwl_Dec12.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/water_data/csv/2012/avwi_Nov12.csv" beforeDir="false" afterPath="$PROJECT_DIR$/water_data/csv/2012/avwl_Nov12.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/water_data/csv/2012/avwi_Oct12.csv" beforeDir="false" afterPath="$PROJECT_DIR$/water_data/csv/2012/avwl_Oct12.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/water_data/csv/2012/avwi_Sep12.csv" beforeDir="false" afterPath="$PROJECT_DIR$/water_data/csv/2012/avwl_Sep12.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/water_data/csv/2011/avwl_Apr11.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dist/water_data/csv/2011/avwl_Apr11.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/water_data/csv/2011/avwl_Aug11.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dist/water_data/csv/2011/avwl_Aug11.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/water_data/csv/2011/avwl_Dec11.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dist/water_data/csv/2011/avwl_Dec11.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/water_data/csv/2011/avwl_Jul11.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dist/water_data/csv/2011/avwl_Jul11.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/water_data/csv/2011/avwl_Jun11.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dist/water_data/csv/2011/avwl_Jun11.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/water_data/csv/2011/avwl_Mar11.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dist/water_data/csv/2011/avwl_Mar11.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/water_data/csv/2011/avwl_May11.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dist/water_data/csv/2011/avwl_May11.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/water_data/csv/2011/avwl_Nov11.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dist/water_data/csv/2011/avwl_Nov11.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,16 +26,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/samples/mapDistWithID.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="365" column="23" lean-forward="true" selection-start-line="365" selection-start-column="23" selection-end-line="365" selection-end-column="23" />
+              <caret line="365" column="23" selection-start-line="365" selection-start-column="23" selection-end-line="365" selection-end-column="23" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/water_data/img/2011/avwl_Apr11.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -230,13 +228,6 @@
               <item name="TNWaterMap" type="b2602c69:ProjectViewProjectNode" />
               <item name="TNWaterMap" type="462c0819:PsiDirectoryNode" />
               <item name="water_data" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-              <item name="2011" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TNWaterMap" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TNWaterMap" type="462c0819:PsiDirectoryNode" />
-              <item name="water_data" type="462c0819:PsiDirectoryNode" />
               <item name="pdf" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -410,8 +401,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="878" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
@@ -618,9 +608,6 @@
           <caret line="30" column="43" lean-forward="true" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/water_data/img/2011/avwl_Apr11.png">
-      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/water_data/csv/2011/avwl_Mar11.csv">
       <provider editor-type-id="csv-table-editor">
@@ -936,12 +923,15 @@
     <entry file="file://$PROJECT_DIR$/samples/mapDistWithID.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="365" column="23" lean-forward="true" selection-start-line="365" selection-start-column="23" selection-end-line="365" selection-end-column="23" />
+          <caret line="365" column="23" selection-start-line="365" selection-start-column="23" selection-end-line="365" selection-end-column="23" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/water_data/img/2011/avwl_Apr11.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
   </component>
 </project>

@@ -192,6 +192,22 @@ img {
 	border: 2px solid #000;
 }
 
+table {
+	border-collapse: collapse;
+	border: 2px black solid;
+	font: 12px sans-serif;
+}
+
+td {
+	border: 1px black solid;
+	padding: 5px;
+}
+
+.table-data {
+	margin-left: 400px;
+	margin-bottom: 100px;
+}
+
 .footer {
 	width: 100%;
 	position: absolute;
@@ -247,6 +263,10 @@ img {
 		font-size: 1.2rem;
 	}
 
+	.table-data {
+		margin-left: 10px;
+		margin-bottom: 100px;
+	}
 	.footer {
 		left: 0;
 		bottom: 0;
