@@ -54,10 +54,11 @@ function getSelectedMap() {
 }
 
 function plotTable(address) {
-	d3.text(address, function(data) {
-		let parsedCSV = d3.csv.parseRows(data);
-		let container = d3
-			.select("#table-data")
+	d3.text("data.csv", function(data) {
+		var parsedCSV = d3.csv.parseRows(data);
+
+		var container = d3
+			.select("body")
 			.append("table")
 
 			.selectAll("tr")
@@ -74,6 +75,5 @@ function plotTable(address) {
 			.text(function(d) {
 				return d;
 			});
-		flag = 1;
 	});
 }
