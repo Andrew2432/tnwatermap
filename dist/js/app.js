@@ -33,7 +33,7 @@ function getSelectedMap() {
 
 	base_address = "water_data/img/";
 	base_csv_address = "water_data/csv/";
-	default_address = "water_data/img/2011/avwl_Mar11.png";
+	default_address = "water_data/img/2011/avwl_Mar11.webp";
 	new_address = `${base_address}${new_year}/avwl_${new_month}${new_year_short}.webp`;
 	new_csv_address = `${base_csv_address}${new_year}/avwl_${new_month}${new_year_short}.csv`;
 
