@@ -27,6 +27,11 @@ img {
 	height: 100%;
 }
 
+a, a:visited, a:active, a:hover, a:link{
+	text-decoration: none;
+	color: #46cdcf;
+}
+
 .header {
 	max-width: auto;
 	margin: auto;
@@ -216,6 +221,7 @@ td {
 	background-color: #48466d;
 	text-align: center;
 	color: #fff;
+	line-height: 1.5;
 }
 
 /* Media Queries */
