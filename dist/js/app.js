@@ -37,8 +37,8 @@ function getSelectedMap() {
 	new_csv_address = `${base_csv_address}${new_year}/avwl_${new_month}${new_year_short}.csv`;
 
 	// Check if image file exists, else use default file
-	//url_new_address = `http://127.0.0.1:5501/${new_address}`;
-	url_new_address = `https://tnwatermap.netlify.com/${new_address}`;
+	url_new_address = `http://127.0.0.1:5501/${new_address}`;
+	//url_new_address = `https://tnwatermap.netlify.com/${new_address}`;
 	isURL = doesFileExist(url_new_address);
 
 	if (isURL) {
@@ -54,7 +54,7 @@ function getSelectedMap() {
 }
 
 function plotTable(address) {
-	d3.text("data.csv", function(data) {
+	d3.text(address, function(data) {
 		var parsedCSV = d3.csv.parseRows(data);
 
 		var container = d3
