@@ -23,7 +23,6 @@ function doesFileExist(urlToFile) {
 }
 
 function getSelectedMap() {
-	flag = 0;
 	let year = getSelectedYear();
 	let month = getSelectedMonth();
 
@@ -44,45 +43,38 @@ function getSelectedMap() {
 
 	if (isURL) {
 		set_address = new_address;
-		plotTable(new_csv_address, flag);
-		flag++;
+		plotTable(new_csv_address);
 	} else {
 		set_address = default_address;
 		alert("Proper data not available");
 	}
-	console.log(set_address);
+	//console.log(set_address);
 	imgTag = document.getElementById("map");
 	document.getElementById("map").setAttribute("src", set_address);
 }
 
-function plotTable(address, flag) {
+function plotTable(address) {
 	let container;
 	d3.text(address, function(data) {
 		let parsedCSV = d3.csv.parseRows(data);
-		if (flag == 1) {
-			container.select("#table_data").remove();
-			flag = 0;
-		}
-		if (flag == 0) {
-			container = d3
-				.select("#table-data")
-				.append("table")
+		let container = d3
+			.select("#table-data")
+			.append("table")
 
-				.selectAll("tr")
-				.data(parsedCSV)
-				.enter()
-				.append("tr")
+			.selectAll("tr")
+			.data(parsedCSV)
+			.enter()
+			.append("tr")
 
-				.selectAll("td")
-				.data(function(d) {
-					return d;
-				})
-				.enter()
-				.append("td")
-				.text(function(d) {
-					return d;
-				});
-			flag = 1;
-		}
+			.selectAll("td")
+			.data(function(d) {
+				return d;
+			})
+			.enter()
+			.append("td")
+			.text(function(d) {
+				return d;
+			});
+		flag = 1;
 	});
 }
