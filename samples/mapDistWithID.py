@@ -9,7 +9,7 @@ sns.set(style="whitegrid", palette="pastel", color_codes=True)
 sns.mpl.rc("figure", figsize=(10,6))
 
 # opening the vector map
-shp_path = "D:\\MEGA\\Core CS\\Projects\\TNWaterMap\\resources\\tamilnadu_district.shp"
+shp_path = "D:\\    MEGA\\Core CS\\Projects\\TNWaterMap\\resources\\tamilnadu_district.shp"
 
 # reading the shape file by using reader function of the shape lib
 sf = shp.Reader(shp_path)

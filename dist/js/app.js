@@ -37,13 +37,13 @@ function getSelectedMap() {
 	new_csv_address = `${base_csv_address}${new_year}/avwl_${new_month}${new_year_short}.csv`;
 
 	// Check if image file exists, else use default file
-	//url_new_address = `http://127.0.0.1:5501/${new_address}`;
-	url_new_address = `https://tnwatermap.netlify.com/${new_address}`;
+	url_new_address = `http://127.0.0.1:5501/${new_address}`;
+	//url_new_address = `https://tnwatermap.netlify.com/${new_address}`;
 	isURL = doesFileExist(url_new_address);
 
 	if (isURL) {
 		set_address = new_address;
-		plotTable(new_csv_address);
+		// plotTable(new_csv_address);
 	} else {
 		set_address = default_address;
 		alert("Proper data not available");
@@ -53,27 +53,27 @@ function getSelectedMap() {
 	document.getElementById("map").setAttribute("src", set_address);
 }
 
-function plotTable(address) {
-	d3.text(address, function(data) {
-		let parsedCSV = d3.csv.parseRows(data);
+// function plotTable(address) {
+// 	d3.text(address, function(data) {
+// 		let parsedCSV = d3.csv.parseRows(data);
 
-		let container = d3
-			.select("#table-data")
-			.append("table")
+// 		let container = d3
+// 			.select("#table-data")
+// 			.append("table")
 
-			.selectAll("tr")
-			.data(parsedCSV)
-			.enter()
-			.append("tr")
+// 			.selectAll("tr")
+// 			.data(parsedCSV)
+// 			.enter()
+// 			.append("tr")
 
-			.selectAll("td")
-			.data(function(d) {
-				return d;
-			})
-			.enter()
-			.append("td")
-			.text(function(d) {
-				return d;
-			});
-	});
-}
+// 			.selectAll("td")
+// 			.data(function(d) {
+// 				return d;
+// 			})
+// 			.enter()
+// 			.append("td")
+// 			.text(function(d) {
+// 				return d;
+// 			});
+// 	});
+// }
