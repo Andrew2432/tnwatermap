@@ -17,7 +17,7 @@ function getSelectedMap() {
 	new_year = String(year);
 	new_month = String(month);
 	new_year_short = String(new_year).substring(2, 4);  
-	base_address = "..\\water_data\\img\\";
+	base_address = "water_data\\img\\";
 	new_address = `${base_address}${new_year}\\avwl_${new_month}${new_year_short}.png`;
   
   console.log(new_address);
