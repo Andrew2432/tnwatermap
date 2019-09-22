@@ -223,6 +223,30 @@ img {
 		order: 3;
 	}
 
+	.controls .controls-box label {
+		padding: 10px;
+		font-size: 1.3rem;
+	}
+
+	.controls .controls-box select {
+		outline: none;
+		width: 150px;
+		height: 40px;
+		border-radius: 20px;
+		padding: 5px;
+	}
+
+	#submit {
+		width: 150px;
+		height: 50px;
+		border-radius: 20px;
+		border: none;
+		background-color: #3d84a8;
+		color: #fff;
+		outline: none;
+		font-size: 1.2rem;
+	}
+
 	.footer {
 		left: 0;
 		bottom: 0;
