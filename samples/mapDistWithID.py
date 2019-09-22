@@ -257,7 +257,7 @@ city_ids = []
 districts_dict = {
     'Chennai': 18,
     'Thiruvallur': 4,
-    'Kanchipuram': 20,
+    'Kancheepuram': 20,
     'Thiruvannamalai': 10,
     'Vellore': 11,
     'Dharmapuri': 25,
@@ -265,9 +265,9 @@ districts_dict = {
     'Cuddalore': 16,
     'Villupuram': 12,
     'Thanjavur': 3,
-    'Thiruvarur': 5,
+    'Tiruvarur': 5,
     'Nagapattinam': 14,
-    'Trichy': 7,
+    'Tiruchirappalli': 7,
     'Karur': 17,
     'Perambalur': 29,
     'Pudukkottai': 1,
@@ -275,25 +275,31 @@ districts_dict = {
     'Namakkal': 28,
     'Erode': 0,
     'Coimbatore': 15,
-    'Nilgiris': 30,
+    'The Nilgiris': 30,
     'Dindigul': 19,
     'Madurai': 27,
     'Ramanathapuram': 22,
     'Sivagangai': 2,
     'Theni': 31,
     'Thoothukudi': 6,
-    'Tirunelveli': 8,
+    'Thirunelveli': 8,
     'Virudhunagar': 13,
-    'Kanyakumari': 26,
-    'Thiruppur': 9
+    'Kanniyakumari': 26,
+    'Tiruppur': 9
 }
 
+# Original Thiruppur new Tiruppur
+# Old Trichy new Tiruchirappalli
+# Old Thiruvarur new Tiruvarur
+# Old Tirunelveli new Thirunelveli
+# Old Nilgiris new The Nilgiris
+# Old Kanyakumari new Kanniyakumari
 # print(sorted([i for i in districts_dict.values()]))
 
-for i in [3]:
+for i in [11]:
     try:
-        data_file_path_year = data_file_path / data_year[1]
-        penultimate_data_file_name = data_files[i] + data_files_year[1]
+        data_file_path_year = data_file_path / data_year[2]
+        penultimate_data_file_name = data_files[i] + data_files_year[2]
         the_data_file_name = penultimate_data_file_name + '.csv'
         final_data_file_name = os.path.join(data_file_path_year, the_data_file_name)
         # print(final_data_file_name)
@@ -310,24 +316,28 @@ for i in [3]:
                 #     if name not in districts_dict.keys():
                 #         print(name)
 
-                data = [i for i in data_f.prev_year]
+                data = [i for i in data_f.cur_year]
                 data.pop(0)
                 water_data = [float(i) for i in data]
 
                 print_id = False # The shape id will be printed
                 color_pallete = 3 # ‘Purple’
 
-
-                for j in data_f.district:
-                    if j == 'Name of the District':
-                        continue
-                    elif j == 'Previous Year(January 2013)':
-                        continue
-                    city_ids.append(districts_dict[j])
-
+                try:
+                    for j in data_f.district:
+                        if j == 'Name of the District':
+                            continue
+                        elif j == 'Previous Year(January 2013)':
+                            continue
+                        elif j == 'Ariyalur':
+                            continue
+                        city_ids.append(districts_dict[j])
+                except KeyError:
+                    # print(KeyError.with_traceback())
+                    continue
 
                 plot_cities_data(sf, 'map', city_ids, water_data, color_pallete, print_id)
-                final_images_path = images_path / data_year[1]
+                final_images_path = images_path / data_year[2]
                 image_name = penultimate_data_file_name + '.png'
                 final_image_file_name = final_images_path / image_name
                 # print(final_image_file_name)
@@ -336,10 +346,10 @@ for i in [3]:
             else:
                 continue
     except TypeError:
-        print('TypeError')
+        # print(TypeError.with_traceback())
         continue
     except ValueError:
-        print('ValueError')
+        # print(ValueError.with_traceback())
         continue
 
 # data_f = pd.read_csv(final_data_file_name, delimiter=',',
